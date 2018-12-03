@@ -20,15 +20,13 @@ constructor() {
       })
       .then(function (response) {
         window.location.href = `${response.data.boardName}/${response.data.uuid}`
-        console.log(response);
+        console.log(response)
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error)
       });
     }
   }
-
-
 
   render() {
     return (
@@ -36,7 +34,8 @@ constructor() {
         <h2 className='App-header'>AnotherRetroBoard</h2>
         <input
           placeholder='board name'
-          onKeyPress={(e) => e.key === 'Enter' ? this.createBoard() : this.setState({boardName: e.target.value})}
+          onChange={(e) => this.setState({boardName: e.target.value})}
+          onKeyPress={(e) => e.key === 'Enter' ? this.createBoard() : null}
         />
         <button
           onClick={() => this.createBoard()}

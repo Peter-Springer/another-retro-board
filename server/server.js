@@ -27,13 +27,21 @@ const Board = mongoose.model("Board", boardSchema)
 app.post('/createBoard', (req, res) => {
   req.body.uuid = uuidv4()
   const newBoard = new Board(req.body)
-  newBoard.save()
+  newBoard.save(req.body)
     .then(item => {
       res.send(req.body)
     })
     .catch(err => {
       res.status(400).send("unable to save to database")
     })
+})
+
+app.get('/board/:id', (req, res) => {
+  Board.find({uuid: `${req.params.id}`}, (err, docs) => {
+    res.send(docs)
+  }).catch(err => {
+      res.status(400).send("error finding board")
+  });
 })
 
 app.listen(app.get('port'), () => {
