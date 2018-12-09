@@ -32,15 +32,21 @@ constructor() {
     return (
       <div className="App">
         <h2 className='App-header'>AnotherRetroBoard</h2>
-        <input
-          placeholder='board name'
-          onChange={(e) => this.setState({boardName: e.target.value})}
-          onKeyPress={(e) => e.key === 'Enter' ? this.createBoard() : null}
-        />
+        <div className="col-3 input-effect">
+          <input
+            className="effect-17"
+            type="text"
+            onChange={(e) => this.setState({boardName: e.target.value})}
+            onKeyPress={(e) => e.key === 'Enter' ? this.createBoard() : null}
+          />
+          <label>New Board Name</label>
+          <span className="focus-border"></span>
+        </div>
         <button
+          className="action-button shadow animate create-button"
           onClick={() => this.createBoard()}
         >
-            New Board
+          Create Another Board
         </button>
       </div>
     );
