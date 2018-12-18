@@ -16,11 +16,12 @@ constructor() {
         boardName: this.state.boardName,
         happy: ['ok'],
         meh: ['cool'],
-        sad: ['wow']
+        sad: ['wow'],
+        actionItems: ['items']
       })
       .then(function (response) {
         window.location.href = `${response.data.boardName}/${response.data.uuid}`
-        console.log(response)
+        console.log(response.data)
       })
       .catch(function (error) {
         console.log(error)

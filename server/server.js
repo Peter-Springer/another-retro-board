@@ -19,7 +19,8 @@ const boardSchema = new mongoose.Schema({
  uuid: String,
  happy: Array,
  meh: Array,
- sad: Array
+ sad: Array,
+ actionItems: Array
 })
 
 const Board = mongoose.model("Board", boardSchema)
@@ -37,8 +38,8 @@ app.post('/createBoard', (req, res) => {
 })
 
 app.get('/board/:id', (req, res) => {
-  Board.find({uuid: `${req.params.id}`}, (err, docs) => {
-    res.send(docs)
+  Board.find({uuid: `${req.params.id}`}, (err, board) => {
+    res.send(board)
   }).catch(err => {
       res.status(400).send("error finding board")
   });

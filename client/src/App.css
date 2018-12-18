@@ -107,3 +107,26 @@ input[type="text"] {
 	border-bottom: 3px solid #4d4d4d;
 	text-shadow: 0px -1px #4d4d4d;
 }
+
+.list-container {
+  border: 2px solid black;
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-header {
+  font-size: 3rem;
+}
+
+.list-input {
+  width: 85%;
+  height: 2rem;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: row;
+}
