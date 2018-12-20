@@ -126,6 +126,10 @@ input[type="text"] {
   height: 2rem;
 }
 
+.list-item {
+  display: block;
+}
+
 .board-container {
   display: flex;
   flex-direction: row;

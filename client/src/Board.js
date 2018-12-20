@@ -18,10 +18,10 @@ class Board extends Component {
     axios.get(`http://localhost:3001/board/${this.props.match.params.uuid}`)
     .then((response) => {
       this.setState({
-        happy: [...this.state.happy, ...[response.data[0].happy]],
-        meh: [...this.state.meh, ...[response.data[0].meh]],
-        sad: [...this.state.sad, ...[response.data[0].sad]],
-        actionItems: [...this.state.actionItems, ...[response.data[0].actionItems]]
+        happy: [...this.state.happy, ...response.data[0].happy],
+        meh: [...this.state.meh, ...response.data[0].meh],
+        sad: [...this.state.sad, ...response.data[0].sad],
+        actionItems: [...this.state.actionItems, ...response.data[0].actionItems]
 
       })
     })
@@ -30,27 +30,36 @@ class Board extends Component {
     });
   }
 
+//TODO: MAKE ONE OBJECT TO HANDLE ALL LIST PROPS
   render() {
     return (
-      <div className="board-container">
+      <div className='board-container'>
       <List
-        columnName={"😁"}
-        columnInstructions={"insert happy stuff"}
+        uuid={this.props.match.params.uuid}
+        listName={'happy'}
+        columnHeader={'😁'}
+        columnInstructions={'insert happy stuff'}
         data={this.state.happy}
       />
       <List
-        columnName={"😕"}
-        columnInstructions={"insert meh stuff"}
+        uuid={this.props.match.params.uuid}
+        listName={'meh'}
+        columnHeader={'😕'}
+        columnInstructions={'insert meh stuff'}
         data={this.state.meh}
       />
       <List
-        columnName={"🥵"}
-        columnInstructions={"insert sad/mad stuff"}
+        uuid={this.props.match.params.uuid}
+        listName={'sad'}
+        columnHeader={'🥵'}
+        columnInstructions={'insert sad/mad stuff'}
         data={this.state.sad}
       />
       <List
-        columnName={"🌟"}
-        columnInstructions={"insert action items"}
+        uuid={this.props.match.params.uuid}
+        listName={'actionItems'}
+        columnHeader={'🌟'}
+        columnInstructions={'insert action items'}
         data={this.state.actionItems}
       />
     </div>
