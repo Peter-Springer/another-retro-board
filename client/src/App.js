@@ -14,10 +14,10 @@ constructor() {
     if (this.state.boardName.length > 0) {
       axios.post('http://localhost:3001/createBoard', {
         boardName: this.state.boardName,
-        happy: ['ok'],
-        meh: ['cool'],
-        sad: ['wow'],
-        actionItems: ['items']
+        happy: [],
+        meh: [],
+        sad: [],
+        actionItems: []
       })
       .then(function (response) {
         window.location.href = `${response.data.boardName}/${response.data.uuid}`
@@ -40,14 +40,14 @@ constructor() {
             onChange={(e) => this.setState({boardName: e.target.value})}
             onKeyPress={(e) => e.key === 'Enter' ? this.createBoard() : null}
           />
-          <label>New Board Name</label>
+        <label>enter a board name</label>
           <span className="focus-border"></span>
         </div>
         <button
           className="action-button shadow animate create-button"
           onClick={() => this.createBoard()}
         >
-          Create Another Board
+          create board
         </button>
       </div>
     );

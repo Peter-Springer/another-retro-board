@@ -38,29 +38,33 @@ class Board extends Component {
         uuid={this.props.match.params.uuid}
         listName={'happy'}
         columnHeader={'😁'}
-        columnInstructions={'insert happy stuff'}
+        columnInstructions={"What's going well?"}
         data={this.state.happy}
+        backgroundColor={"#EFE9AE"}
       />
       <List
         uuid={this.props.match.params.uuid}
         listName={'meh'}
         columnHeader={'😕'}
-        columnInstructions={'insert meh stuff'}
+        columnInstructions={'What are you curious about?'}
         data={this.state.meh}
+        backgroundColor={"#FEC3A6"}
       />
       <List
         uuid={this.props.match.params.uuid}
         listName={'sad'}
         columnHeader={'🥵'}
-        columnInstructions={'insert sad/mad stuff'}
+        columnInstructions={"What's not going well?"}
         data={this.state.sad}
+        backgroundColor={"#FF928B"}
       />
       <List
         uuid={this.props.match.params.uuid}
         listName={'actionItems'}
-        columnHeader={'🌟'}
-        columnInstructions={'insert action items'}
+        columnHeader={'Action Items'}
+        columnInstructions={'Action items'}
         data={this.state.actionItems}
+        backgroundColor={"#CDEAC0"}
       />
     </div>
     )
