@@ -1,5 +1,5 @@
 body {
-  background-color: #CDEAC0;
+  background-color: #ededed;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -62,7 +62,7 @@ input[type="text"] {
   bottom: 0;
   left: 50%; width: 0;
   height: 2px;
-  background-color: #885053;
+  background-color: #8e24aa;
   transition: 0.4s;
 }
 .effect-17:focus ~ .focus-border,
@@ -76,7 +76,7 @@ input[type="text"] {
   left: 0;
   width: 100%;
   top: 9px;
-  color: #7d7b7b;
+  color: #8e24aa;
   transition: 0.3s;
   z-index: -1;
   letter-spacing: 0.5px;
@@ -84,7 +84,7 @@ input[type="text"] {
 .effect-17:focus ~ label, .has-content.effect-17 ~ label{
   top: -16px;
   font-size: 12px;
-  color: #885053;
+  color: #8e24aa;
   transition: 0.3s;
   font-weight: bold;
 }
@@ -107,10 +107,10 @@ input[type="text"] {
 }
 
 .create-button {
-	background-color: #FF928B;
+	background-color: #8e24aa;
 	border-bottom: 3px solid #4d4d4d;
 	text-shadow: 0px -1px #4d4d4d;
-  color: #4c4c4c;
+  color: #ededed;
 }
 
 .list-container {
