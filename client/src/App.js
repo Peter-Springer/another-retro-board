@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './App.css'
+import socket from './api/index';
 
 class App extends Component {
 constructor() {
@@ -10,22 +11,23 @@ constructor() {
   }
 }
 
+componentWillMount() {
+  socket.on('sendBoardToClient', board => {
+    console.log(board)
+    window.location.href = `${board.boardName}/${board.uuid}`
+  })
+}
+
   createBoard = () => {
     if (this.state.boardName.length > 0) {
-      axios.post('http://localhost:3001/createBoard', {
+      socket.emit('createBoard', {
+        // uuid: '',
         boardName: this.state.boardName,
         happy: [],
         meh: [],
         sad: [],
         actionItems: []
       })
-      .then(function (response) {
-        window.location.href = `${response.data.boardName}/${response.data.uuid}`
-        console.log(response.data)
-      })
-      .catch(function (error) {
-        console.log(error)
-      });
     }
   }
 

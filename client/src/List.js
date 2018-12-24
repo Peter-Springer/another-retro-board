@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import socket from './api/index';
 
 class List extends Component {
   constructor() {
@@ -10,17 +11,11 @@ class List extends Component {
     }
 
   addItem = (id, listName, item) => {
-      axios.post(`http://localhost:3001/addItem`, {
+      socket.emit('saveListItem', {
         id: id,
         listName: listName,
         item: item
       })
-      .then((response) => {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      });
       this.setState({itemText: ''})
   }
 
