@@ -10,7 +10,7 @@ body {
   opacity: 1; /* Firefox */
 }
 
-.App {
+.Home {
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -22,9 +22,8 @@ body {
   color: #4C4C4C;
 }
 
-.App-header {
+.Home-header {
   font-size: 3rem;
-  /* transform: rotate(3deg); */
 }
 
 :focus {
@@ -133,6 +132,7 @@ input[type="text"] {
   height: 2rem;
   font-size: 1rem;
   border-radius: 8px;
+  border: none;
   color: black;
   padding-left: 10px;
   margin-bottom: 1rem;
