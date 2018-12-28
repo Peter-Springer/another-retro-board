@@ -30,6 +30,14 @@ class List extends Component {
     })
   }
 
+  removeItem = (boardId, itemId, listName) => {
+    socket.emit('removeItem', {
+      boardId: boardId,
+      itemId: itemId,
+      listName: listName
+    })
+  }
+
   render() {
     const {itemText} = this.state
     const {backgroundColor, columnHeader, columnInstructions, listName, boardId, data} = this.props.listProps
@@ -50,6 +58,7 @@ class List extends Component {
                 data={data}
                 boardId={boardId}
                 updateItem={this.updateItem}
+                removeItem={this.removeItem}
                 listName={listName}
               />
             )}

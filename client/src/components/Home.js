@@ -39,7 +39,7 @@ componentWillMount() {
             onChange={(e) => this.setState({boardName: e.target.value})}
             onKeyPress={(e) => e.key === 'Enter' ? this.createBoard() : null}
           />
-        <label>enter a board name</label>
+          <label>enter a board name</label>
           <span className='focus-border'></span>
         </div>
         <button

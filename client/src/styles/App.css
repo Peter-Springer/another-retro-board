@@ -5,10 +5,15 @@ body {
   font-weight: 900;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
   color: #4C4C4C;
   font-weight: bolder;
-  opacity: 1; /* Firefox */
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
 
 .Home {
@@ -58,7 +63,7 @@ input[type="text"] {
   background-color: transparent;
 }
 
-.effect-17 ~ .focus-border{
+.effect-17 ~ .focus-border {
   position: absolute;
   bottom: 0;
   left: 50%; width: 0;
@@ -66,13 +71,15 @@ input[type="text"] {
   background-color: #8e24aa;
   transition: 0.4s;
 }
+
 .effect-17:focus ~ .focus-border,
-.has-content.effect-17 ~ .focus-border{
+.has-content.effect-17 ~ .focus-border {
   width: 100%;
   transition: 0.4s;
   left: 0;
 }
-.effect-17 ~ label{
+
+.effect-17 ~ label {
   position: absolute;
   left: 0;
   width: 100%;
@@ -82,7 +89,8 @@ input[type="text"] {
   z-index: -1;
   letter-spacing: 0.5px;
 }
-.effect-17:focus ~ label, .has-content.effect-17 ~ label{
+
+.effect-17:focus ~ label, .has-content.effect-17 ~ label {
   top: -16px;
   font-size: 12px;
   color: #8e24aa;
@@ -90,8 +98,7 @@ input[type="text"] {
   font-weight: bold;
 }
 
-.animate
-{
+.animate {
 	transition: all 0.1s;
 	-webkit-transition: all 0.1s;
 }
@@ -126,7 +133,6 @@ input[type="text"] {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow-y: scroll;
 }
 
 .list-header {

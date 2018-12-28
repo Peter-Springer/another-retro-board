@@ -16,6 +16,5 @@ const boardSchema = new mongoose.Schema({
  actionItems: [itemSchema]
 })
 
-const Board = mongoose.model('Board', boardSchema)
-
-module.exports = Board
+exports.Board = mongoose.model('Board', boardSchema)
+exports.Item = mongoose.model('Item', itemSchema)
