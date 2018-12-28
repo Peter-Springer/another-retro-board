@@ -35,7 +35,8 @@ class Board extends Component {
     return (
       <div className='board-container'>
         <List
-          listProps={{uuid: uuid,
+          listProps={{
+                      boardId: uuid,
                       listName: 'happy',
                       columnHeader: '😁',
                       columnInstructions: "What's going well?",
@@ -44,7 +45,8 @@ class Board extends Component {
                     }}
         />
         <List
-          listProps={{uuid: uuid,
+          listProps={{
+                      boardId: uuid,
                       listName: 'meh',
                       columnHeader: '😕',
                       columnInstructions: 'What are you curious about?',
@@ -53,7 +55,8 @@ class Board extends Component {
                     }}
         />
         <List
-          listProps={{uuid: uuid,
+          listProps={{
+                      boardId: uuid,
                       listName: 'sad',
                       columnHeader: '🥵',
                       columnInstructions: "What's not going well?",
@@ -62,10 +65,11 @@ class Board extends Component {
                     }}
         />
         <List
-          listProps={{uuid: uuid,
+          listProps={{
+                      boardId: uuid,
                       listName: 'actionItems',
                       columnHeader: 'Action Items',
-                      columnInstructions: 'Action items',
+                      columnInstructions: 'Add an action item',
                       data: actionItems,
                       backgroundColor: '#CDEAC0'
                     }}

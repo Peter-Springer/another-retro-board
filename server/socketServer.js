@@ -38,7 +38,31 @@ io.on('connection', socket => {
     })
   })
 
+  socket.on('updateList', updateData => {
+    Board.find({uuid: `${updateData.boardId}`}, (err, board) => {
+      if (err) return handleError(err)
+        board[0][updateData.listName].map(item => {
+          // add correct conditional!!!!
+          console.log(updateData.itemId + "!!!!!" + item.itemId)
+          if (updateData.itemId === item.itemId) {
+            console.log("HEREEEE")
+            item[updateData.attribute] = updateData.requestedUpdate
+          }
+          return item
+        })
+        console.log(board[0].meh[0])
+        // Board.create(board)
+        Board.create(board, (err, board) => {
+          if (err) return handleError(err)
+          // broadcast events to all clients including the sender
+          io.sockets.emit('boardResponse', board)
+        })
+    })
+  })
+
 })
+
+// TODO use id from mongo
 
 server.listen(5000, () => {
 	console.log("Socket Server is running on http://localhost:5000")

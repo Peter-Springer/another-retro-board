@@ -1,12 +1,19 @@
 const mongoose = require('mongoose')
 
+const itemSchema = new mongoose.Schema({
+  text: String,
+  likes: Number,
+  reviewed: Boolean,
+  itemId: String
+})
+
 const boardSchema = new mongoose.Schema({
  boardName: String,
  uuid: String,
- happy: Array,
- meh: Array,
- sad: Array,
- actionItems: Array
+ happy: [itemSchema],
+ meh: [itemSchema],
+ sad: [itemSchema],
+ actionItems: [itemSchema]
 })
 
 const Board = mongoose.model('Board', boardSchema)
