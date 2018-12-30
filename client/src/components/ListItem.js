@@ -19,7 +19,7 @@ const ListItem = ({data, updateItem, removeItem, boardId, listName}) => {
           style={{'paddingRight': '4px'}}
           onClick={() => updateItem(boardId, data.itemId, listName, 'likes', data.likes + 1)}
         >
-          ❤️
+          <span role="img" aria-label="Heart">❤️</span>
         </i>
           {data.likes}
         </span>
