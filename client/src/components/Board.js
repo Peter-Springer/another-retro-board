@@ -68,7 +68,7 @@ class Board extends Component {
           listProps={{
                       boardId: uuid,
                       listName: 'actionItems',
-                      columnHeader: 'Action Items',
+                      columnHeader: '🐼',
                       columnInstructions: 'Add an action item',
                       data: actionItems,
                       backgroundColor: '#CDEAC0'
