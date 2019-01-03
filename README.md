@@ -1,6 +1,10 @@
-ANOTHER RETRO BOARD
+## ANOTHER RETRO BOARD
 
-CREATE REACT APP
-NODE
-SOCKET.IO
-MONGO-DB
+#### A retro board application built using the following:
+
+* Create React App
+* Node
+* Express
+* Socket.IO
+* Mongoose
+* MongoDB
