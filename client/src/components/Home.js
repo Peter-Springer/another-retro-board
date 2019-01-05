@@ -44,7 +44,7 @@ componentWillMount() {
         </div>
         <button
           className='action-button shadow animate create-button'
-          onClick={() => this.createBoard()}
+          onClick={this.createBoard}
         >
           create board
         </button>
