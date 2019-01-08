@@ -14,7 +14,7 @@ io.on('connection', (socket) => {
   socket.on('createBoard', board => {
     board.uuid = uuidv4()
     Models.Board.create(board, (err, board) => {
-      if (err) return handleError(err)
+      if (err) console.log(err)
       socket.emit('sendBoardToClient', board)
     })
   })
@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
   socket.on('boardRequest', boardId => {
     socket.join(boardId)
     Models.Board.find({uuid: `${boardId}`}, (err, board) => {
-      if (err) return handleError(err)
+      if (err) console.log(err)
       io.to(boardId).emit('boardResponse', board)
     })
   })
@@ -30,10 +30,10 @@ io.on('connection', (socket) => {
   socket.on('saveListItem', boardData => {
     socket.join(boardData.id)
     Models.Board.find({uuid: `${boardData.id}`}, (err, board) => {
-      if (err) return handleError(err)
+      if (err) console.log(err)
       board[0][boardData.listName].push(boardData.item)
       Models.Board.create(board, (err, board) => {
-        if (err) return handleError(err)
+        if (err) console.log(err)
         // broadcast events to all clients including the sender
         io.to(boardData.id).emit('boardResponse', board)
         // io.sockets.emit('boardResponse', board)
@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
   socket.on('updateList', updateData => {
     socket.join(updateData.boardId)
     Models.Board.find({uuid: `${updateData.boardId}`}, (err, board) => {
-      if (err) return handleError(err)
+      if (err) console.log(err)
         board[0][updateData.listName].map(item => {
           if (updateData.itemId === item.itemId) {
             item[updateData.attribute] = updateData.requestedUpdate
@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
           return item
         })
         Models.Board.create(board, (err, board) => {
-          if (err) return handleError(err)
+          if (err) console.log(err)
           io.to(updateData.boardId).emit('boardResponse', board)
         })
     })
@@ -61,10 +61,10 @@ io.on('connection', (socket) => {
   socket.on('removeItem', deleteData => {
     socket.join(deleteData.boardId)
     Models.Board.find({uuid: `${deleteData.boardId}`}, (err, board) => {
-      if (err) return handleError(err)
+      if (err) console.log(err)
       board[0][deleteData.listName] = board[0][deleteData.listName].filter(item => item.itemId != deleteData.itemId)
       Models.Board.create(board, (err, board) => {
-        if (err) return handleError(err)
+        if (err) console.log(err)
         io.to(deleteData.boardId).emit('boardResponse', board)
       })
     })
