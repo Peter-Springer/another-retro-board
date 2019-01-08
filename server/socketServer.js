@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 const Models = require('./model/models')
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/RETRO_BOARDS')
+mongoose.connect('mongodb://localhost:27017/RETRO_BOARDS', { useNewUrlParser: true })
 
 io.on('connection', (socket) => {
 
