@@ -4,7 +4,7 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server, { origins: 'http://localhost:3000/'})
 const uuidv4 = require('uuid/v4')
 const mongoose = require('mongoose')
-const Models = require('./model/models')
+const Models = require('./models/models')
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost:27017/RETRO_BOARDS', { useNewUrlParser: true })
