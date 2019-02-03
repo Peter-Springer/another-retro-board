@@ -3,14 +3,12 @@ const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const port = process.env.PORT || 5000;
-const io = require('socket.io').listen(server, { origins: `http://localhost:${port}/`})
+const io = require('socket.io')(server, { origins: '*:*'})
 const uuidv4 = require('uuid/v4')
 const mongoose = require('mongoose')
 const Models = require('./models/models')
 const path = require("path")
 app.use(express.static(path.join(__dirname, "client", "build")))
-
-server.listen(process.env.PORT || 3000);
 
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/RETRO_BOARDS', { useNewUrlParser: true })
