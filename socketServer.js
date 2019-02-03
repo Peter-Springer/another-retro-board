@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
-const io = require('socket.io')(server, { origins: 'http://localhost:3000/'})
+const io = require('socket.io')(server, { origins: 'http://localhost:5000/'})
 const uuidv4 = require('uuid/v4')
 const mongoose = require('mongoose')
 const Models = require('./models/models')
+const path = require("path")
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost:27017/RETRO_BOARDS', { useNewUrlParser: true })
@@ -74,6 +76,10 @@ io.on('connection', (socket) => {
 
 // TODO: make responsive
 // TODO: try to use _id from mongo
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 server.listen(5000, () => {
 	console.log("Socket Server is running on http://localhost:5000")
