@@ -58,7 +58,7 @@ class Board extends Component {
           listProps={{
                       boardId: uuid,
                       listName: 'sad',
-                      columnHeader: '🥵',
+                      columnHeader: '😡',
                       columnInstructions: "What's not going well?",
                       data: sad,
                       backgroundColor: '#FF928B'
