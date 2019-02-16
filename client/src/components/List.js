@@ -51,7 +51,8 @@ class List extends Component {
           onKeyPress={(e) => e.key === 'Enter' ? this.addItem(boardId, listName, itemText) : null}
           value={itemText}
         />
-      {data.map((data, i) => {
+        <div className='list-items-container'>
+          {data.map((data, i) => {
             return (
               <ListItem
                 key={i}
@@ -62,7 +63,8 @@ class List extends Component {
                 listName={listName}
               />
             )}
-      )}
+          )}
+        </div>
       </section>
     )
   }

@@ -152,11 +152,15 @@ input[type="text"] {
   margin-bottom: 1rem;
 }
 
+.list-items-container {
+  overflow-y: scroll;
+}
+
 .list-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 13rem;
   max-height: 8rem;
   padding: 10px;
   margin-bottom: 1rem;
