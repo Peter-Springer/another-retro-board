@@ -187,4 +187,12 @@ input[type="text"] {
   .Home-header {
     font-size: 2rem;
   }
+
+  .board-container {
+    flex-direction: column;
+  }
+
+  .list-container {
+    width: 100%;
+  }
 }
