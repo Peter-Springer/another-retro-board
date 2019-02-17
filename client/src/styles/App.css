@@ -182,6 +182,10 @@ input[type="text"] {
   word-break: break-word;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .col-3 {

@@ -8,14 +8,14 @@ const ListItem = ({data, updateItem, removeItem, boardId, listName}) => {
     >
       <div className='list-item-header'>
         <i
-          className='material-icons'
+          className='material-icons cursor'
           onClick={() => removeItem(boardId, data.itemId, listName)}
         >
           delete
         </i>
         <span hidden={listName === 'actionItems' ? true : false}>
         <i
-          className='material-icons'
+          className='material-icons cursor'
           style={{'paddingRight': '4px'}}
           onClick={() => updateItem(boardId, data.itemId, listName, 'likes', data.likes + 1)}
         >
@@ -24,7 +24,7 @@ const ListItem = ({data, updateItem, removeItem, boardId, listName}) => {
           {data.likes}
         </span>
         <i
-          className='material-icons'
+          className='material-icons cursor'
           onClick={() => updateItem(boardId, data.itemId, listName, 'reviewed', !data.reviewed)}
         >
           {data.reviewed ? 'check_box' : 'check_box_outline_blank'}
