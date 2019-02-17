@@ -179,7 +179,7 @@ input[type="text"] {
 
 .list-item-text {
   display: flex;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 @media only screen and (max-width: 768px) {
