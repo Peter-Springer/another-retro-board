@@ -143,12 +143,12 @@ input[type="text"] {
 
 .list-input {
   width: 85%;
-  height: 2rem;
+  min-height: 3rem;
   font-size: 1rem;
   border-radius: 8px;
   border: none;
   color: black;
-  padding-left: 10px;
+  padding-left: 0 10px;
   margin-bottom: 1rem;
 }
 
