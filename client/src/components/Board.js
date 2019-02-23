@@ -20,12 +20,19 @@ class Board extends Component {
 
   updateBoardState = () => {
     socket.on('boardResponse', board => {
-      this.setState({
-        happy: board[0].happy,
-        meh: board[0].meh,
-        sad: board[0].sad,
-        actionItems: board[0].actionItems
-      })
+      console.log('!!!!!!!!!! ' + board)
+      if (board[0] !== undefined) {
+        console.log('@@@@@@@@ ' + board)
+        this.setState({
+          happy: board[0].happy,
+          meh: board[0].meh,
+          sad: board[0].sad,
+          actionItems: board[0].actionItems
+        })
+      } else {
+        console.log('###### ' + board)
+        window.location.href = `/NoBoardExists`
+      }
     })
   }
 

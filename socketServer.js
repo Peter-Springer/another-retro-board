@@ -76,7 +76,6 @@ io.on('connection', (socket) => {
 
 })
 
-// TODO: make responsive
 // TODO: try to use _id from mongo
 
 app.get("*", (req, res) => {

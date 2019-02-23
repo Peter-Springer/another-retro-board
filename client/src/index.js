@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import Board from './components/Board'
+import NoBoardExists from './components/NoBoardExists'
 import * as serviceWorker from './serviceWorker'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ const Root = () => {
         <div>
           <Route exact={true} path='/' component={App} />
           <Route path='/:boardName/:uuid' component={Board} />
+          <Route path='/NoBoardExists' component={NoBoardExists} />
         </div>
       </Router>
   )
