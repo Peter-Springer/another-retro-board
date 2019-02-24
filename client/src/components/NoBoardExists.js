@@ -3,9 +3,14 @@ import React from 'react'
 const NoBoardExists = () => {
   return (
     <div className="no-board-container">
-      <p>We were unable to find a board associated to this URL</p>
+      <p>Error: Unable to find board</p>
       <p>Update your URL or create a new board</p>
-      <button>Create New Board</button>
+      <button
+      onClick={() => window.location.href = '/'}
+      className="action-button shadow animate create-button"
+      >
+        Create New Board
+      </button>
     </div>
   )
 }
