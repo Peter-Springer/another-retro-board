@@ -161,7 +161,7 @@ input[type="text"] {
   flex-direction: column;
   justify-content: center;
   width: 13rem;
-  max-height: 8rem;
+  max-height: 20rem;
   padding: 10px;
   margin-bottom: 1rem;
   font-size: 1.5rem;
