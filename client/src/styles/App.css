@@ -125,12 +125,13 @@ input[type="text"] {
   font-family: 'Permanent Marker', cursive;
   display: flex;
   flex-direction: row;
+  height: 100%;
 }
 
 .list-container {
   border: 2px solid #4C4C4C;
   width: 25%;
-  height: 100vh;
+  overflow-y: scroll;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -178,6 +179,7 @@ input[type="text"] {
 }
 
 .list-item-text {
+  max-height: 15rem;
   display: flex;
   word-break: break-word;
 }
