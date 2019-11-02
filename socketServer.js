@@ -73,6 +73,20 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('removeAllItems', deleteAllData => {
+    socket.join(deleteAllData.boardId)
+    Models.Board.find({uuid: `${deleteAllData.boardId}`}, (err, board) => {
+      if (err) console.log(err)
+       board[0]['happy'] = []
+       board[0]['meh'] = []
+       board[0]['sad'] = []
+       Models.Board.create(board, (err, board) => {
+         if (err) console.log(err)
+          io.to(deleteAllData.boardId).emit('boardResponse', board)
+        })
+      })
+    })
+
 })
 
 // TODO: try to use _id from mongo

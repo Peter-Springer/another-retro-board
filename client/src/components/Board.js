@@ -33,10 +33,23 @@ class Board extends Component {
     })
   }
 
+  removeAllItems = (boardId) => {
+    socket.emit('removeAllItems', {
+      boardId: boardId,
+    })
+  }
+
   render() {
     const {uuid} = this.props.match.params
     const {happy, meh, sad, actionItems} = this.state
     return (
+    <div>
+      <button
+       className='clear-board'
+       onClick={() => this.removeAllItems(uuid)}
+      >
+      clear board
+      </button>
       <div className='board-container'>
         <div className='list-wrapper'>
             <List
@@ -80,6 +93,7 @@ class Board extends Component {
                         }}
             />
         </div>
+       </div>
       </div>
     )
   }
