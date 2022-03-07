@@ -2,9 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const port = process.env.PORT || 5005
-const io = require('socket.io')(server, { origins: '*:*'}, {
-  transports  : [ 'websocket' ]
-})
+const io = require('socket.io')(server, { origins: '*:*'})
 const uuidv4 = require('uuid/v4')
 const mongoose = require('mongoose')
 const Models = require('./models/models')
@@ -13,8 +11,6 @@ app.use(express.static(path.join(__dirname, "client", "build")))
 
 mongoose.Promise = global.Promise
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/RETRO_BOARDS', { useNewUrlParser: true })
-
-// io.set('transports', ['websocket']);
 
 io.on('connection', (socket) => {
 
