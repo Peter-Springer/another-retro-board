@@ -5,7 +5,7 @@
   "main": "socketServer.js",
   "scripts": {
     "start": "node socketServer.js",
-    "heroku-postbuild": "rm -rf node_modules && npm install && cd client && rm -rf node_modules && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
     "node": "8.12.0"
