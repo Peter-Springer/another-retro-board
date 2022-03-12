@@ -2,10 +2,8 @@
   "name": "another-retro-board",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "^2.1.5"
-  },
   "dependencies": {
+    "react-scripts": "^2.1.5",
     "axios": "^0.21.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
